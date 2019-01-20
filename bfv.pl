@@ -38,7 +38,7 @@ READ: while ( my $string = <FILE> ) {
 }
 
 say CSV join "\t", sort { $b cmp $a } keys %$table;
-WRITE: for ( my $i = 0 ; $i < $weapon_number ; $i++ ) {
+WRITE: for ( my $i = 1 ; $i <= $weapon_number ; $i++ ) {
     foreach my $key ( sort { $b cmp $a } keys %$table ) {
         print CSV $table->{$key}->[$i], "\t";
     }
